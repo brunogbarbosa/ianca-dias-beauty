@@ -16,14 +16,14 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import portraitAsset from "@/assets/dra-ianca-1.jpg.asset.json";
-import fullAsset from "@/assets/dra-ianca-3.jpg.asset.json";
+import portraitAsset from "@/assets/dra-ianca-1.jpg";
+import fullAsset from "@/assets/dra-ianca-3.jpg";
 
-import resLips1 from "@/assets/result-new-lips-1.jpg.asset.json";
-import resLips2 from "@/assets/result-new-lips-2.jpg.asset.json";
-import resSmile from "@/assets/result-new-smile.jpg.asset.json";
-import resProfile from "@/assets/result-new-profile.jpg.asset.json";
-import resHarm from "@/assets/result-new-harmonization.jpg.asset.json";
+import resLips1 from "@/assets/result-lips-1.jpg";
+import resLips2 from "@/assets/result-lips-2.jpg";
+import resSmile from "@/assets/result-smile.jpg";
+import resProfile from "@/assets/result-profile.jpg";
+import resHarm from "@/assets/result-harmonization.jpg";
 import result01 from "@/assets/result01.jpeg";
 import result02 from "@/assets/result02.jpeg";
 import result03 from "@/assets/result03.jpeg";
@@ -52,10 +52,13 @@ const fadeUp: Variants = {
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+    transition: {
+      duration: 0.7,
+      delay: i * 0.08,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
   }),
 };
-
 
 function LandingPage() {
   return (
@@ -74,14 +77,15 @@ function LandingPage() {
   );
 }
 
-/* ─────────────────────────  NAV  ───────────────────────── */
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
@@ -94,12 +98,14 @@ function Nav() {
         <a href="#top" className="font-display italic text-rosewood text-xl tracking-tight">
           Dra. Ianca Dias
         </a>
+
         <nav className="hidden md:flex items-center gap-9 text-sm text-warm-gray">
           <a href="#sobre" className="hover:text-rosewood transition-colors">Sobre</a>
           <a href="#tratamentos" className="hover:text-rosewood transition-colors">Tratamentos</a>
           <a href="#galeria" className="hover:text-rosewood transition-colors">Resultados</a>
           <a href="#depoimentos" className="hover:text-rosewood transition-colors">Depoimentos</a>
         </nav>
+
         <a
           href={WHATSAPP}
           target="_blank"
@@ -114,13 +120,12 @@ function Nav() {
   );
 }
 
-/* ─────────────────────────  HERO  ───────────────────────── */
 function Hero() {
   const { scrollY } = useScroll();
   const blobY = useTransform(scrollY, [0, 600], [0, 120]);
+
   return (
     <section id="top" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
-      {/* organic blob */}
       <motion.div
         style={{ y: blobY }}
         className="blob absolute -right-32 -top-20 lg:right-[-10rem] lg:top-[-6rem] w-[34rem] h-[34rem] lg:w-[44rem] lg:h-[44rem] bg-gradient-to-br from-blush-soft via-champagne to-blush opacity-80 -z-10"
@@ -130,18 +135,29 @@ function Hero() {
         className="blob absolute -left-40 bottom-[-10rem] w-[24rem] h-[24rem] bg-gradient-to-br from-champagne to-blush-soft opacity-40 -z-10"
       />
 
-      {/* decorative lip curve */}
       <svg
         className="absolute top-1/3 right-10 hidden lg:block opacity-40"
-        width="180" height="80" viewBox="0 0 180 80" fill="none"
+        width="180"
+        height="80"
+        viewBox="0 0 180 80"
+        fill="none"
       >
-        <path d="M5 40 Q 45 5, 90 40 Q 135 75, 175 40" stroke="#7D4E57" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+        <path
+          d="M5 40 Q 45 5, 90 40 Q 135 75, 175 40"
+          stroke="#7D4E57"
+          strokeWidth="1.2"
+          fill="none"
+          strokeLinecap="round"
+        />
       </svg>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center relative">
         <div className="lg:col-span-7 max-w-2xl">
           <motion.div
-            initial="hidden" animate="visible" custom={0} variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0}
+            variants={fadeUp}
             className="label mb-6 flex items-center gap-3"
           >
             <span className="h-px w-10 bg-rose-gold inline-block" />
@@ -149,7 +165,10 @@ function Hero() {
           </motion.div>
 
           <motion.h1
-            initial="hidden" animate="visible" custom={1} variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            variants={fadeUp}
             className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[5.2rem] lg:leading-[1.02] text-charcoal"
           >
             Sorrisos que <em className="text-rosewood not-italic-fix italic">encantam</em>.
@@ -158,24 +177,32 @@ function Hero() {
           </motion.h1>
 
           <motion.p
-            initial="hidden" animate="visible" custom={2} variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            variants={fadeUp}
             className="mt-7 text-warm-gray text-lg lg:text-xl font-light max-w-xl leading-relaxed"
           >
             Harmonização Orofacial & Odontologia Estética com técnica que respeita a sua beleza única.
           </motion.p>
 
           <motion.div
-            initial="hidden" animate="visible" custom={3} variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={3}
+            variants={fadeUp}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
             <a
               href={WHATSAPP}
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
               aria-label="Agendar consulta"
               className="inline-flex items-center justify-center gap-2 bg-rosewood text-cream px-8 py-4 rounded-full text-sm tracking-wide hover:bg-rosewood-soft hover:scale-[1.02] transition-all shadow-[0_12px_30px_-12px_rgba(125,78,87,0.6)]"
             >
               Agendar Consulta <ArrowRight size={16} />
             </a>
+
             <a
               href="#tratamentos"
               className="inline-flex items-center justify-center gap-2 border border-rosewood/40 text-rosewood px-8 py-4 rounded-full text-sm tracking-wide hover:bg-rosewood/5 transition-all"
@@ -185,12 +212,19 @@ function Hero() {
           </motion.div>
 
           <motion.div
-            initial="hidden" animate="visible" custom={4} variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={4}
+            variants={fadeUp}
             className="mt-12 flex items-center gap-6 text-xs text-warm-gray"
           >
-            <span className="flex items-center gap-2"><ShieldCheck size={14} className="text-rosewood" /> CRO-RO 5390</span>
+            <span className="flex items-center gap-2">
+              <ShieldCheck size={14} className="text-rosewood" /> CRO-RO 5390
+            </span>
             <span className="h-3 w-px bg-blush" />
-            <span className="flex items-center gap-2"><Heart size={14} className="text-rosewood" /> Resultados naturais</span>
+            <span className="flex items-center gap-2">
+              <Heart size={14} className="text-rosewood" /> Resultados naturais
+            </span>
           </motion.div>
         </div>
 
@@ -202,11 +236,12 @@ function Hero() {
         >
           <div className="relative mx-auto w-[18rem] sm:w-[22rem] lg:w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-30px_rgba(125,78,87,0.45)]">
             <img
-              src={portraitAsset.url}
+              src={portraitAsset}
               alt="Dra. Ianca Dias — Dentista e Harmonização Orofacial"
               className="w-full h-full object-cover"
             />
           </div>
+
           <div className="absolute -bottom-6 -left-6 bg-background/90 backdrop-blur-md border border-blush-soft rounded-2xl px-5 py-4 shadow-xl flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-rosewood/10 flex items-center justify-center text-rosewood">
               <Sparkles size={18} />
@@ -222,14 +257,13 @@ function Hero() {
   );
 }
 
-/* ─────────────────────────  ABOUT  ───────────────────────── */
 function About() {
   return (
     <section id="sobre" className="relative py-28 bg-[color:var(--cream)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14 items-center">
         <Reveal className="lg:col-span-5">
           <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">
-            <img src={fullAsset.url} alt="Dra. Ianca Dias" className="w-full h-full object-cover" />
+            <img src={fullAsset} alt="Dra. Ianca Dias" className="w-full h-full object-cover" />
           </div>
         </Reveal>
 
@@ -264,7 +298,6 @@ function About() {
   );
 }
 
-/* ─────────────────────────  SERVICES  ───────────────────────── */
 const services = [
   { icon: Smile, name: "Lábios Naturais", desc: "Preenchimento sutil com resultado delicado, respeitando o formato natural." },
   { icon: Syringe, name: "Botox", desc: "Suavização de linhas de expressão com precisão, segurança e naturalidade." },
@@ -304,7 +337,6 @@ function Services() {
   );
 }
 
-/* ─────────────────────────  DIFFERENTIALS  ───────────────────────── */
 const diffs = [
   { n: "01", title: "Resultados Naturais", desc: "Técnica que respeita sua beleza única — sem exageros, sem padrões." },
   { n: "02", title: "Atendimento Humanizado", desc: "Você é ouvida do início ao fim. Cada plano é pensado para você." },
@@ -340,13 +372,12 @@ function Differentials() {
   );
 }
 
-/* ─────────────────────────  GALLERY  ───────────────────────── */
 const gallery = [
-  { src: resLips1.url, label: "Preenchimento Labial" },
-  { src: resSmile.url, label: "Sorriso & Estética Dental" },
-  { src: resProfile.url, label: "Perfiloplastia" },
-  { src: resHarm.url, label: "Harmonização Orofacial" },
-  { src: resLips2.url, label: "Lábios Naturais" },
+  { src: resLips1, label: "Preenchimento Labial" },
+  { src: resSmile, label: "Sorriso & Estética Dental" },
+  { src: resProfile, label: "Perfiloplastia" },
+  { src: resHarm, label: "Harmonização Orofacial" },
+  { src: resLips2, label: "Lábios Naturais" },
   { src: result01, label: "Botox" },
   { src: result02, label: "Preenchimento Labial" },
   { src: result03, label: "Clareamento Dental" },
@@ -367,7 +398,7 @@ function Gallery() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {gallery.map((g, i) => (
-            <Reveal key={g.label} i={i}>
+            <Reveal key={`${g.label}-${i}`} i={i}>
               <figure className="group relative overflow-hidden rounded-3xl shadow-[0_20px_50px_-25px_rgba(0,0,0,0.3)] bg-[color:var(--cream)] border border-blush-soft/60">
                 <img
                   src={g.src}
@@ -387,7 +418,8 @@ function Gallery() {
         <div className="mt-12 text-center">
           <a
             href={INSTAGRAM}
-            target="_blank" rel="noreferrer"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 text-rosewood hover:gap-3 transition-all"
           >
             <Instagram size={18} /> Acompanhe no Instagram — @draiancadias <ArrowRight size={16} />
@@ -398,7 +430,6 @@ function Gallery() {
   );
 }
 
-/* ─────────────────────────  TESTIMONIALS  ───────────────────────── */
 const tests = [
   {
     quote: "Resultado discreto e natural — exatamente como eu queria. A Dra. Ianca entendeu cada detalhe do meu rosto.",
@@ -432,9 +463,7 @@ function Testimonials() {
           {tests.map((t, i) => (
             <Reveal key={t.name} i={i}>
               <article className="h-full bg-background border border-blush/40 rounded-3xl p-8 shadow-[0_10px_30px_-20px_rgba(125,78,87,0.3)]">
-                <p className="font-display italic text-xl text-charcoal leading-snug">
-                  “{t.quote}”
-                </p>
+                <p className="font-display italic text-xl text-charcoal leading-snug">“{t.quote}”</p>
                 <div className="divider-gold my-6 w-12" />
                 <p className="text-sm text-rosewood">{t.name}</p>
                 <p className="text-xs text-warm-gray uppercase tracking-[0.18em] mt-1">{t.treat}</p>
@@ -447,7 +476,6 @@ function Testimonials() {
   );
 }
 
-/* ─────────────────────────  FINAL CTA  ───────────────────────── */
 function FinalCTA() {
   return (
     <section className="relative py-28 overflow-hidden bg-rosewood text-cream">
@@ -465,7 +493,8 @@ function FinalCTA() {
           </p>
           <a
             href={WHATSAPP}
-            target="_blank" rel="noreferrer"
+            target="_blank"
+            rel="noreferrer"
             aria-label="Falar com a Dra. Ianca no WhatsApp"
             className="inline-flex items-center gap-3 mt-10 bg-cream text-rosewood px-9 py-4 rounded-full text-sm tracking-wide hover:scale-[1.03] hover:bg-background transition-all shadow-[0_18px_40px_-15px_rgba(0,0,0,0.4)]"
           >
@@ -477,11 +506,11 @@ function FinalCTA() {
   );
 }
 
-/* ─────────────────────────  FOOTER  ───────────────────────── */
 function Footer() {
   return (
     <footer className="bg-background pt-20 pb-10">
       <div className="divider-gold max-w-7xl mx-auto" />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 grid md:grid-cols-3 gap-10">
         <div>
           <p className="font-display italic text-2xl text-rosewood">Dra. Ianca Dias</p>
@@ -504,14 +533,25 @@ function Footer() {
 
         <div>
           <p className="label mb-4">Contato</p>
-          <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-warm-gray hover:text-rosewood transition-colors">
+          <a
+            href={INSTAGRAM}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm text-warm-gray hover:text-rosewood transition-colors"
+          >
             <Instagram size={14} /> @draiancadias
           </a>
-          <a href={WHATSAPP} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-warm-gray hover:text-rosewood transition-colors mt-2">
+          <a
+            href={WHATSAPP}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm text-warm-gray hover:text-rosewood transition-colors mt-2"
+          >
             <MessageCircle size={14} /> WhatsApp
           </a>
         </div>
       </div>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-14 pt-6 border-t border-blush-soft/60 text-xs text-warm-gray flex flex-col sm:flex-row gap-3 justify-between">
         <p>© {new Date().getFullYear()} Dra. Ianca Dias. Todos os direitos reservados.</p>
         <p className="italic">Procedimentos realizados exclusivamente por profissional habilitada.</p>
@@ -520,7 +560,6 @@ function Footer() {
   );
 }
 
-/* ─────────────────────────  WHATSAPP FAB  ───────────────────────── */
 function WhatsAppFab() {
   return (
     <a
@@ -535,7 +574,6 @@ function WhatsAppFab() {
   );
 }
 
-/* ─────────────────────────  REVEAL HELPER  ───────────────────────── */
 function Reveal({
   children,
   className = "",

@@ -374,7 +374,7 @@ function Differentials() {
 
 const gallery = [
   { src: resLips1, label: "Preenchimento Labial" },
-  { src: resSmile, label: "Sorriso & Estética Dental" },
+  { src: resSmile, label: "Preenchimento Labial" },
   { src: resProfile, label: "Perfiloplastia" },
   { src: resHarm, label: "Harmonização Orofacial" },
   { src: resLips2, label: "Lábios Naturais" },

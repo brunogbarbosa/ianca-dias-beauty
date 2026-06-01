@@ -16,13 +16,14 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import portraitAsset from "@/assets/ianca-portrait.asset.json";
-import fullAsset from "@/assets/ianca-full.asset.json";
-import resLips from "@/assets/result-lips.asset.json";
-import resFill from "@/assets/result-fill.asset.json";
-import resBotox from "@/assets/result-botox.asset.json";
-import resWhite from "@/assets/result-whitening.asset.json";
-import resTeeth from "@/assets/result-teeth.asset.json";
+import portraitAsset from "@/assets/dra-ianca-1.jpg.asset.json";
+import fullAsset from "@/assets/dra-ianca-3.jpg.asset.json";
+import portrait2 from "@/assets/dra-ianca-2.jpg.asset.json";
+import resLips1 from "@/assets/result-new-lips-1.jpg.asset.json";
+import resLips2 from "@/assets/result-new-lips-2.jpg.asset.json";
+import resSmile from "@/assets/result-new-smile.jpg.asset.json";
+import resProfile from "@/assets/result-new-profile.jpg.asset.json";
+import resHarm from "@/assets/result-new-harmonization.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({

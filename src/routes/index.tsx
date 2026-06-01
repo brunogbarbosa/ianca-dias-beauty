@@ -18,7 +18,7 @@ import {
 
 import portraitAsset from "@/assets/dra-ianca-1.jpg.asset.json";
 import fullAsset from "@/assets/dra-ianca-3.jpg.asset.json";
-import portrait2 from "@/assets/dra-ianca-2.jpg.asset.json";
+
 import resLips1 from "@/assets/result-new-lips-1.jpg.asset.json";
 import resLips2 from "@/assets/result-new-lips-2.jpg.asset.json";
 import resSmile from "@/assets/result-new-smile.jpg.asset.json";

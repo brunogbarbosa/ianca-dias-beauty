@@ -77,20 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Dra. Ianca Dias | Dentista & Harmonização Orofacial — Porto Velho" },
+      { name: "description", content: "Odontologia estética e harmonização orofacial em Porto Velho, RO. Lábios naturais, botox, perfiloplastia e clareamento com a Dra. Ianca Dias (CRO-RO 5390)." },
+      { name: "author", content: "Dra. Ianca Dias" },
+      { property: "og:title", content: "Dra. Ianca Dias | Dentista & Harmonização Orofacial" },
+      { property: "og:description", content: "Sorrisos que encantam. Beleza que transforma. Porto Velho, RO." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:image", content: "/og-image.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "theme-color", content: "#7D4E57" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/jpeg", href: "/favicon.jpg" },
+      { rel: "apple-touch-icon", href: "/favicon.jpg" },
     ],
   }),
   shellComponent: RootShell,
@@ -98,6 +99,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
+
 
 function RootShell({ children }: { children: ReactNode }) {
   return (

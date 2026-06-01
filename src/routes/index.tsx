@@ -24,6 +24,11 @@ import resLips2 from "@/assets/result-new-lips-2.jpg.asset.json";
 import resSmile from "@/assets/result-new-smile.jpg.asset.json";
 import resProfile from "@/assets/result-new-profile.jpg.asset.json";
 import resHarm from "@/assets/result-new-harmonization.jpg.asset.json";
+import result01 from "@/assets/result01.jpeg.asset.json";
+import result02 from "@/assets/result02.jpeg.asset.json";
+import result03 from "@/assets/result03.jpeg.asset.json";
+import result04 from "@/assets/result04.jpeg.asset.json";
+import result05 from "@/assets/result05.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -342,6 +347,11 @@ const gallery = [
   { src: resProfile.url, label: "Perfiloplastia" },
   { src: resHarm.url, label: "Harmonização Orofacial" },
   { src: resLips2.url, label: "Lábios Naturais" },
+  { src: result01.url, label: "Botox" },
+  { src: result02.url, label: "Preenchmento Labial" },
+  { src: result03.url, label: "Clareamento Dental" },
+  { src: result04.url, label: "Preenchmento Labial" },
+  { src: result05.url, label: "Clareamento Dental" },
 ];
 
 function Gallery() {

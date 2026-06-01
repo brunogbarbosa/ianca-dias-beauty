@@ -16,13 +16,14 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import portraitAsset from "@/assets/ianca-portrait.asset.json";
-import fullAsset from "@/assets/ianca-full.asset.json";
-import resLips from "@/assets/result-lips.asset.json";
-import resFill from "@/assets/result-fill.asset.json";
-import resBotox from "@/assets/result-botox.asset.json";
-import resWhite from "@/assets/result-whitening.asset.json";
-import resTeeth from "@/assets/result-teeth.asset.json";
+import portraitAsset from "@/assets/dra-ianca-1.jpg.asset.json";
+import fullAsset from "@/assets/dra-ianca-3.jpg.asset.json";
+
+import resLips1 from "@/assets/result-new-lips-1.jpg.asset.json";
+import resLips2 from "@/assets/result-new-lips-2.jpg.asset.json";
+import resSmile from "@/assets/result-new-smile.jpg.asset.json";
+import resProfile from "@/assets/result-new-profile.jpg.asset.json";
+import resHarm from "@/assets/result-new-harmonization.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -336,11 +337,11 @@ function Differentials() {
 
 /* ─────────────────────────  GALLERY  ───────────────────────── */
 const gallery = [
-  { src: resLips.url, label: "Lábios Naturais" },
-  { src: resWhite.url, label: "Clareamento" },
-  { src: resBotox.url, label: "Botox" },
-  { src: resFill.url, label: "Preenchimento Labial" },
-  { src: resTeeth.url, label: "Estética Dental" },
+  { src: resLips1.url, label: "Preenchimento Labial" },
+  { src: resSmile.url, label: "Sorriso & Estética Dental" },
+  { src: resProfile.url, label: "Perfiloplastia" },
+  { src: resHarm.url, label: "Harmonização Orofacial" },
+  { src: resLips2.url, label: "Lábios Naturais" },
 ];
 
 function Gallery() {
@@ -348,35 +349,26 @@ function Gallery() {
     <section id="galeria" className="py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal className="max-w-2xl mb-14">
-          <p className="label mb-4">Galeria</p>
+          <p className="label mb-4">Galeria · Antes & Depois</p>
           <h2 className="font-display text-4xl lg:text-5xl leading-tight">
             Transformações <em className="italic text-rosewood">reais</em>.
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {gallery.map((g, i) => (
-            <Reveal
-              key={g.label}
-              i={i}
-              className={
-                i === 0
-                  ? "md:row-span-2 md:col-span-1"
-                  : i === 2
-                  ? "md:col-span-2"
-                  : ""
-              }
-            >
-              <figure className="group relative overflow-hidden rounded-3xl shadow-[0_20px_50px_-25px_rgba(0,0,0,0.3)] h-full">
+            <Reveal key={g.label} i={i}>
+              <figure className="group relative overflow-hidden rounded-3xl shadow-[0_20px_50px_-25px_rgba(0,0,0,0.3)] bg-[color:var(--cream)] border border-blush-soft/60">
                 <img
                   src={g.src}
                   alt={g.label}
                   loading="lazy"
-                  className="w-full h-full object-cover aspect-[4/5] group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-[1200ms] ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-rosewood/70 via-rosewood/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                  <span className="text-cream font-display italic text-xl">{g.label}</span>
-                </div>
+                <figcaption className="px-5 py-4 flex items-center gap-4">
+                  <span className="font-display italic text-lg text-rosewood whitespace-nowrap">{g.label}</span>
+                  <span className="h-px flex-1 bg-rose-gold/40" />
+                </figcaption>
               </figure>
             </Reveal>
           ))}

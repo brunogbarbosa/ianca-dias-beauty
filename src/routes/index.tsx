@@ -16,14 +16,14 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import portraitAsset from "@/assets/dra-ianca-1.jpg";
-import fullAsset from "@/assets/dra-ianca-3.jpg";
+import portraitAsset from "@/assets/dra.ianca.jpg.jpeg";
+import fullAsset from "@/assets/dra.ianca3.jpg.jpeg";
 
-import resLips1 from "@/assets/result-lips-1.jpg";
-import resLips2 from "@/assets/result-lips-2.jpg";
-import resSmile from "@/assets/result-smile.jpg";
-import resProfile from "@/assets/result-profile.jpg";
-import resHarm from "@/assets/result-harmonization.jpg";
+import resLips1 from "@/assets/r1.jpeg";
+import resLips2 from "@/assets/r2.jpeg";
+import resSmile from "@/assets/r3.jpeg";
+import resProfile from "@/assets/r4.jpeg";
+import resHarm from "@/assets/r5.jpeg";
 import result01 from "@/assets/result01.jpeg";
 import result02 from "@/assets/result02.jpeg";
 import result03 from "@/assets/result03.jpeg";

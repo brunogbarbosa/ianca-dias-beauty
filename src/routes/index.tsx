@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
   Sparkles,
@@ -41,14 +41,15 @@ export const Route = createFileRoute("/")({
 const WHATSAPP = "https://www.contate.me/5569999556383";
 const INSTAGRAM = "https://instagram.com/draiancadias";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   }),
 };
+
 
 function LandingPage() {
   return (
